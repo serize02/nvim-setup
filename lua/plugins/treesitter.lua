@@ -10,6 +10,7 @@ return {
       treesitter.install({
         "lua",
         "python",
+        "c",
         "cpp",
         "latex",
         "markdown",
@@ -24,6 +25,7 @@ return {
         pattern = {
           "lua",
           "python",
+          "c",
           "cpp",
           "latex",
           "markdown",

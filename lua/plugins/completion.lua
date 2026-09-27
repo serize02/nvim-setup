@@ -1,35 +1,35 @@
 return {
-    {
-        "saghen/blink.cmp",
-        version = "*",
+  {
+    "saghen/blink.cmp",
+    version = "*",
 
-        opts = {
-            keymap = {
-                preset = "enter",
-            },
+    opts = {
+      keymap = {
+        preset = "enter",
+      },
 
-            appearance = {
-                nerd_font_variant = "mono",
-            },
+      appearance = {
+        nerd_font_variant = "mono",
+      },
 
-            completion = {
-                documentation = {
-                    auto_show = true,
-                },
-            },
-
-            sources = {
-                default = {
-                    "lsp",
-                    "path",
-                    "snippets",
-                    "buffer",
-                },
-            },
+      completion = {
+        documentation = {
+          auto_show = true,
         },
+      },
 
-        opts_extend = {
-            "sources.default",
+      sources = {
+        default = {
+          "lsp",
+          "path",
+          "snippets",
+          "buffer",
         },
+      },
     },
+
+    opts_extend = {
+      "sources.default",
+    },
+  },
 }

@@ -10,7 +10,15 @@ return {
       end)
 
       require("nvim-tree").setup({
+        view = { width = 30 },
+        live_filter = { always_show_folders = false, },
+        update_focused_file = {
+          enable = true,
+          update_root = false,
+        },
         renderer = {
+          root_folder_label = false,
+          indent_markers = { enable = true },
           icons = {
             glyphs = {
               folder = {

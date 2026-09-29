@@ -2,9 +2,23 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
+      local function on_attach(client, bufnr)
+        if client.server_capabilities.documentSymbolProvider then
+          require("nvim-navic").attach(client, bufnr)
+        end
+      end
       local capabilities = require("blink.cmp").get_lsp_capabilities()
       vim.lsp.config("basedpyright", {
-        capabilities = capabilities
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = {
+          basedpyright = {
+            analysis = {
+              diagnosticMode = "openFilesOnly",
+              autoSearchPaths = true,
+            },
+          },
+        },
       })
       vim.lsp.enable("basedpyright")
       vim.lsp.config("clangd", {
